@@ -1,5 +1,6 @@
 /* Put your javascript in here */
  /* label the images, just for convenience, to visually track them */
+ 
  let i = 1;
  for(let li of carousel.querySelectorAll('li')) {
    li.style.position = 'relative';
