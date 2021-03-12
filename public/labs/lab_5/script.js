@@ -8,16 +8,15 @@ function mapInit() {
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoibGluZHNleWNhc3RpbiIsImEiOiJja202bGExYnMwcDV5Mm5wbXNwdndhbDF1In0.4r8JF2fpYCZiWrwVFu7X_g'
   }).addTo(mymap);
-  
-  // follow the Leaflet Getting Started tutorial here
+  console.log('mymap', mymap)
   return mymap;
 }
 
 async function dataHandler(mapObjectFromFunction) {
-
+          
   // use your assignment 1 data handling code here
   // and target mapObjectFromFunction to attach markers
-  console.log('window loaded');
+  //console.log('window loaded');//
   const form = document.querySelector('.userform');
   const search = document.querySelector('#zip');
   const targetList = document.querySelector('.target-list');
@@ -33,6 +32,7 @@ async function dataHandler(mapObjectFromFunction) {
       const display = data.filter((record) => record.zip === search.value);
       const topfive = display.slice(0,5)
       topfive.forEach((row) => {
+          
           const appendItem = document.createElement("li");
           appendItem.classList.add('block')
           appendItem.classList.add('list-item');
@@ -40,7 +40,7 @@ async function dataHandler(mapObjectFromFunction) {
           targetList.append(appendItem);
       
       });
-
+      
       console.log('input', event.target.value);
   });
 
@@ -53,3 +53,4 @@ async function windowActions() {
 }
 window.onload = windowActions;
 
+ 
